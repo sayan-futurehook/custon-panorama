@@ -184,7 +184,7 @@ class _PanoramaState extends State<Panorama>
   void _handleMoveUpdate(PointerMoveEvent details) {
     final Vector3 o =
         positionToLatLon(details.localPosition.dx, details.localPosition.dy);
-    widget.onLongPressMoveUpdate!(degrees(o.x), degrees(-o.y), degrees(o.z));
+    widget.onMoveUpdate!(degrees(o.x), degrees(-o.y), degrees(o.z));
   }
 
   void _handleLongPressEnd(LongPressEndDetails details) {
