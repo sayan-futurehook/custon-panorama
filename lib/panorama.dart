@@ -181,7 +181,7 @@ class _PanoramaState extends State<Panorama>
     widget.onLongPressMoveUpdate!(degrees(o.x), degrees(-o.y), degrees(o.z));
   }
 
-  void _handleMoveUpdate(PointerHoverEvent details) {
+  void _handleMoveUpdate(PointerMoveEvent details) {
     final Vector3 o =
         positionToLatLon(details.localPosition.dx, details.localPosition.dy);
     widget.onLongPressMoveUpdate!(degrees(o.x), degrees(-o.y), degrees(o.z));
@@ -510,7 +510,7 @@ class _PanoramaState extends State<Panorama>
 
     return widget.interactive
         ? Listener(
-            onPointerHover:
+            onPointerMove:
                 widget.onMoveUpdate == null ? null : _handleMoveUpdate,
             child: GestureDetector(
               onScaleStart: _handleScaleStart,
