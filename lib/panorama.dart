@@ -482,9 +482,9 @@ class _PanoramaState extends State<Panorama>
           croppedFullWidth: widget.croppedFullWidth,
           croppedFullHeight: widget.croppedFullHeight);
     }
-    // if (widget.child?.image != oldWidget.child?.image) {
-    //   _loadTexture(widget.child?.image);
-    // }
+    if (widget.child?.image != oldWidget.child?.image) {
+      _loadTexture(widget.child?.image);
+    }
     if (widget.sensorControl != oldWidget.sensorControl) {
       _updateSensorControl();
     }
