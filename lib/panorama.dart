@@ -131,6 +131,7 @@ class Panorama extends StatefulWidget {
       onLongPressEnd;
 
   /// Specify an Image(equirectangular image) widget to the panorama.
+  /// //EDITED
   final ImageProvider? child;
 
   /// Place widgets in the panorama.
