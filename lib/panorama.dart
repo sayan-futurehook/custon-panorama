@@ -131,7 +131,7 @@ class Panorama extends StatefulWidget {
       onLongPressEnd;
 
   /// Specify an Image(equirectangular image) widget to the panorama.
-  final Image? child;
+  final ImageProvider? child;
 
   /// Place widgets in the panorama.
   final List<Hotspot>? hotspots;
@@ -363,7 +363,7 @@ class _PanoramaState extends State<Panorama>
           croppedFullWidth: widget.croppedFullWidth,
           croppedFullHeight: widget.croppedFullHeight);
       surface = Object(name: 'surface', mesh: mesh, backfaceCulling: false);
-      _loadTexture(widget.child!.image);
+      _loadTexture(widget.child!);
       scene.world.add(surface!);
       _updateView();
     }
@@ -482,8 +482,8 @@ class _PanoramaState extends State<Panorama>
           croppedFullWidth: widget.croppedFullWidth,
           croppedFullHeight: widget.croppedFullHeight);
     }
-    if (widget.child?.image != oldWidget.child?.image) {
-      _loadTexture(widget.child?.image);
+    if (widget.child != oldWidget.child) {
+      _loadTexture(widget.child);
     }
     if (widget.sensorControl != oldWidget.sensorControl) {
       _updateSensorControl();
