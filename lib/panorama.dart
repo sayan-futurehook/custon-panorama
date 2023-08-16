@@ -546,10 +546,10 @@ class Hotspot {
   String? name;
 
   /// The initial latitude, in degrees, between -90 and 90.
-  final double latitude;
+  double latitude;
 
   /// The initial longitude, in degrees, between -180 and 180.
-  final double longitude;
+  double longitude;
 
   /// The local orgin of this hotspot. Default is Offset(0.5, 0.5).
   final Offset orgin;
